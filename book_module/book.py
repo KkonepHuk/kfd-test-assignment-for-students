@@ -14,7 +14,12 @@ class Book:
         self.status = status
     
     def __str__(self):
-        s = f'[ISBN: {self.isbn}, Title: {self.title}, Autor: {self.author}, Genre: {self.genre}, Status: {self.status}]'
+        if self.status:
+            st = 'Available'
+        else:
+            st = 'Not Available'
+
+        s = f'[ISBN: {self.isbn}, Title: {self.title}, Autor: {self.author}, Genre: {self.genre}, Status: {st}]'
         return s
     
     def show(self):
