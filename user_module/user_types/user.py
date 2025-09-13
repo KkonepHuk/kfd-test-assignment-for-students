@@ -21,7 +21,7 @@ class User:
         return len(self.borrowed_books) < self.get_max_books()
     
     def __str__(self):
-        s = f'[user_id: {self.user_id}, Name: {self.name}, Email: {self.email}, Borrowed Books: {self.borrowed_books}'
+        s = f'[user_id: {self.user_id}, Name: {self.name}, Email: {self.email}, Borrowed Books: {self.borrowed_books}]'
         return s
     
     def show(self):
