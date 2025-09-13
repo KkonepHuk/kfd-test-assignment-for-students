@@ -101,4 +101,3 @@ class Library:
         
         book.set_available(True)
         user.get_borrowed_books().remove(isbn)
-        self.borrowing_history.append(BorrowingRecord(user, book))
