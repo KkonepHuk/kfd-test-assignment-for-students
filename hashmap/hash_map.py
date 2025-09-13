@@ -34,3 +34,17 @@ class HashMap:
 
             return add_func(self, *args)
         return wrapper
+    
+    #Вывод всей Хэш-Таблицы для тестов
+    def test_show(self):
+        for i in range(self.size):
+            if self.table[i] == None:
+                print(f'{i} : {self.table[i]}')
+            else:
+                print(f'{i} : {self.table[i].show()}')
+    
+    #Вывод всех элементв в Хэш-Таблице
+    def show(self):
+        for i in range(self.size):
+            if self.table[i] != None:
+                print(f'{self.table[i].show()}')
