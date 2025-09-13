@@ -73,3 +73,12 @@ class SinglyLinkedList:
             s += f'{str(current.item)}\n'
             current = current.next
         return s[:-2]
+
+    #Односвязный список в двумерный массив
+    def list_to_arr(self):
+        data = []
+        current = self.head
+        while current:
+            data.append(current.item.book_to_arr())
+            current = current.next
+        return data

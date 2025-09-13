@@ -12,12 +12,21 @@ class Book:
     
     def set_available(self, status: bool):
         self.status = status
-    
-    def __str__(self):
+
+    def not_bool_status(self):
         if self.status:
             st = 'Available'
         else:
             st = 'Not Available'
+        
+        return st
+    def book_to_arr(self):
+        st = self.not_bool_status()
+
+        return [self.isbn, self.title, self.author, self.genre, st]
+    
+    def __str__(self):
+        st = self.not_bool_status()
 
         s = f'[ISBN: {self.isbn}, Title: {self.title}, Autor: {self.author}, Genre: {self.genre}, Status: {st}]'
         return s

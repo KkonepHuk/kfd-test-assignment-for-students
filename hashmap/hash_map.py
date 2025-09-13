@@ -48,3 +48,11 @@ class HashMap:
         for i in range(self.size):
             if self.table[i] != None:
                 print(f'{self.table[i].show()}')
+
+    #Преобразует Хэш-Таблицу в двумернай массив
+    def hash_map_to_arr(self):
+        data = []
+        for i in range(self.size):
+            if self.table[i] != None:
+                data.extend(self.table[i].list_to_arr())
+        return data
