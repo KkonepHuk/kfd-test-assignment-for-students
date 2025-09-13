@@ -21,8 +21,8 @@ class SinglyLinkedList:
         return s[:-2]
     
         #Добавление в начало списка
-    def add_to_start(self, item):
-        new_node = Node(item)
+    def add_to_start(self, item, key):
+        new_node = Node(item, key)
         if self.head == None:
             self.head = new_node
         else:

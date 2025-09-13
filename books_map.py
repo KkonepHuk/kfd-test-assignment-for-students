@@ -19,10 +19,10 @@ class BooksMap(HashMap):
         ind = self.hash_func(book.isbn)
         if self.table[ind] == None:
             sll = SinglyLinkedList()
-            sll.add_to_start(book)
+            sll.add_to_start(book, book.isbn)
             self.table[ind] = sll
         else:
-            self.table[ind].add_to_start(book)
+            self.table[ind].add_to_start(book, book.isbn)
         self.incr_occupation()
     
     #Удаление книги по ее "ISBN"
