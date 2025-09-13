@@ -37,18 +37,12 @@ class Library:
         result = []
         query = query.lower()
 
-        for sll in self.books:
-            if sll is None:
-                continue
-            node = sll.head
-            while node:
-                book = node.item
-                if (query in book.title.lower() or
-                    query in book.author.lower() or
-                    query in book.genre.lower() or
-                    query in book.isbn):
-                    result.append(book)
-                node = node.next
+        for book in self.books.hash_map_to_arr():
+            if (query in book[0].lower() or
+                query in book[1].lower() or
+                query in book[2].lower() or
+                query in book[3].lower()):
+                result.append(book)
         return result
     
     ##### Операции с Пользователями #####
