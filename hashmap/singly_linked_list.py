@@ -29,3 +29,30 @@ class SinglyLinkedList:
             new_node.next = self.head
             self.head = new_node
         self.length += 1
+    
+        #Удаление узла
+    def remove(self, key):
+        current = self.head
+        prev = None
+
+        while current:
+            if current.key == key:
+                if prev is None:
+                    #Удаление головы
+                    self.head = current.next
+                else:
+                    prev.next = current.next
+
+                self.length -= 1
+                return
+            prev = current
+            current = current.next
+
+    
+    #Удаление узла из начала
+    def remove_from_start(self):
+        if self.head:
+            removed = self.head
+            self.head = self.head.next
+            self.length -= 1
+            return removed
