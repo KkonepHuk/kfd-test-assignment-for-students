@@ -5,3 +5,10 @@ class User:
         self.email = email
         self.borrowed_books = borrowed_books
     
+    def __str__(self):
+        s = f'[user_id: {self.user_id}, Name: {self.name}, Email: {self.email}, Borrowed Books: {self.borrowed_books}'
+        return s
+    
+    def show(self):
+        return self.__str__()
+    
