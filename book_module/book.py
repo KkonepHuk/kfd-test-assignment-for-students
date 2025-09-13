@@ -6,6 +6,9 @@ class Book:
         self.isbn = isbn
         self.genre = genre
         self.status = status
+
+    def is_available(self):
+        return self.status
     
     def __str__(self):
         s = f'[ISBN: {self.isbn}, Title: {self.title}, Autor: {self.author}, Genre: {self.genre}, Status: {self.status}]'
