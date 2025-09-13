@@ -56,3 +56,12 @@ class SinglyLinkedList:
             self.head = self.head.next
             self.length -= 1
             return removed
+    
+    #Поиск в списке значения по ключу
+    def find(self, key):
+        current = self.head
+        while current:
+            if current.key == key:
+                return current.item
+            current = current.next
+        return -1
