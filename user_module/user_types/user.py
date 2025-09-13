@@ -12,15 +12,5 @@ class User:
     def show(self):
         return self.__str__()
     
-class Student(User):
-    def __init__(self, name, user_id, email, borrowed_books = []):
-        super().__init__(name, user_id, email, borrowed_books)
 
 
-class Faculty(User):
-    def __init__(self, name, user_id, email, borrowed_books = []):
-        super().__init__(name, user_id, email, borrowed_books)
-
-class Guest(User):
-    def __init__(self, name, user_id, email, borrowed_books = []):
-        super().__init__(name, user_id, email, borrowed_books)
