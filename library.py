@@ -108,7 +108,7 @@ class Library:
     
     def get_overdue_books(self):
         result = []
-        for record in self.borrowing_records:
+        for record in self.borrowing_history:
             if record.is_overdue() and (not record.returned):
                 result.append(record)
         return result
