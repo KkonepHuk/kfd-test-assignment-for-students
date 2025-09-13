@@ -95,13 +95,20 @@ class Library:
 
         if user == -1 or book == -1: #Существуют ли книга и пользователь
             return False
+        if isbn not in user.borrowed_books:
+            return False
         
+        for record in self.borrowing_history:
+            if record.user.user_id == user_id and record.book.isbn == isbn and not record.returned:
+                record.mark_returned()
         book.set_available(True)
         user.get_borrowed_books().remove(isbn)
+
+        return True
     
     def get_overdue_books(self):
         result = []
         for record in self.borrowing_records:
-            if record.is_overdue():
+            if record.is_overdue() and (not record.returned):
                 result.append(record)
         return result
