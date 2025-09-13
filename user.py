@@ -1,9 +1,9 @@
 class User:
-    def __init__(self, name, user_id, email, borrowed_books = []):
+    def __init__(self, name, user_id, email, borrowed_books = None):
         self.name = name
         self.user_id = user_id
         self.email = email
-        self.borrowed_books = borrowed_books
+        self.borrowed_books = borrowed_books if borrowed_books is not None else []
     
     def __str__(self):
         s = f'[user_id: {self.user_id}, Name: {self.name}, Email: {self.email}, Borrowed Books: {self.borrowed_books}'
