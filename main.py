@@ -1,6 +1,7 @@
 from library import Library
 from handlers.book_managment import handle_book_managment
 from handlers.user_managment import handle_user_managment
+from handlers.borrowing_operations import handle_borrowing_operations
 from utils import get_input
 
 def show_menu():
@@ -27,7 +28,7 @@ if __name__ == '__main__':
             case '2':
                 handle_user_managment(lib)
             case '3':
-                pass
+                handle_borrowing_operations(lib)
             case 'w':
                 print("Users")
                 lib.users.test_show()
