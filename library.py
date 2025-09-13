@@ -48,6 +48,27 @@ class Library:
                     result.append(book)
                 node = node.next
         return result
+    
+    ##### Операции с Пользователями #####
+
+    def register_user(self, name, user_id, email, type: str):
+        match type.lower():
+            case 'student':
+                user = Student(name, user_id, email)
+            case 'guest':
+                user = Guest(name, user_id, email)
+            case 'faculty':
+                user = Faculty(name, user_id, email)
+            case _:
+                return -1 #Поменять на нормальный вывод
+        
+        self.users.add(user)
+    
+    def find_user(self, user_id):
+        user = self.users.get(user_id)
+        if user != -1:
+            return user
+        return 'No specific user'
 
     def borrow_book(self, user_id, isbn):
         user = self.users.get(user_id)
