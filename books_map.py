@@ -24,3 +24,14 @@ class BooksMap(HashMap):
         else:
             self.table[ind].add_to_start(book)
         self.incr_occupation()
+    
+    #Удаление книги по ее "ISBN"
+    def remove(self, isbn):
+        ind = self.hash_func(isbn)
+        if self.table[ind] == None:
+            return -1
+        elif self.table[ind].length > 1:
+            self.table[ind].remove(isbn)
+        else:
+            self.table[ind] = None
+        self.decr_occupation()
