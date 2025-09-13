@@ -31,7 +31,7 @@ class Library:
         book = self.books.get(isbn)
         if book != -1:
             return book
-        return 'No book'
+        return False
     
     def search_books(self, query: str):
         result = []
