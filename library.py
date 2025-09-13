@@ -104,3 +104,10 @@ class Library:
         
         book.set_available(True)
         user.get_borrowed_books().remove(isbn)
+    
+    def get_overdue_books(self):
+        result = []
+        for record in self.borrowing_records:
+            if record.is_overdue():
+                result.append(record)
+        return result
