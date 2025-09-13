@@ -1,5 +1,6 @@
 from library import Library
 from handlers.book_managment import handle_book_managment
+from handlers.user_managment import handle_user_managment
 from utils import get_input
 
 def show_menu():
@@ -24,7 +25,7 @@ if __name__ == '__main__':
             case '1':
                 handle_book_managment(lib)
             case '2':
-                pass
+                handle_user_managment(lib)
             case '3':
                 pass
             case 'w':
