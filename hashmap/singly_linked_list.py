@@ -65,3 +65,11 @@ class SinglyLinkedList:
                 return current.item
             current = current.next
         return -1
+    
+    def show(self):
+        current = self.head
+        s = ''
+        while current:
+            s += f'{str(current.item)}\n'
+            current = current.next
+        return s[:-2]
