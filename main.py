@@ -1,3 +1,5 @@
+from library import Library
+from handlers.book_managment import handle_book_managment
 from utils import get_input
 
 def show_menu():
@@ -10,17 +12,23 @@ def show_menu():
 
 
 if __name__ == '__main__':
+    lib = Library()
     is_launched = True
     while is_launched:
         show_menu()
-        choice = get_input(prompt="Enter choice: ", valid_input="0123")
+        choice = get_input(prompt="Enter choice: ", valid_input="0123w")
 
         match choice:
             case '0':
                 is_launched = False
             case '1':
-                pass
+                handle_book_managment(lib)
             case '2':
                 pass
             case '3':
                 pass
+            case 'w':
+                print("Users")
+                lib.users.test_show()
+                print("Books")
+                lib.books.test_show()
