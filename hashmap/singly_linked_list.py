@@ -19,3 +19,13 @@ class SinglyLinkedList:
             s += f'{str(current.item)}->'
             current = current.next
         return s[:-2]
+    
+        #Добавление в начало списка
+    def add_to_start(self, item):
+        new_node = Node(item)
+        if self.head == None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.length += 1
