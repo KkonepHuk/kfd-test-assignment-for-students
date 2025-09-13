@@ -14,6 +14,9 @@ class User:
     def get_fine_per_day(self):
         pass
     
+    def get_borrowed_books(self):
+        return self.borrowed_books
+    
     def can_borrow(self):
         return len(self.borrowed_books) < self.get_max_books()
     
