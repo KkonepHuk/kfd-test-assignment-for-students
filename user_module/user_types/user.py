@@ -5,6 +5,18 @@ class User:
         self.email = email
         self.borrowed_books = borrowed_books if borrowed_books is not None else []
     
+    def get_max_books(self):
+        pass
+
+    def get_borrow_days(self):
+        pass
+
+    def get_fine_per_day(self):
+        pass
+    
+    def can_borrow(self):
+        return len(self.borrowed_books) < self.get_max_books()
+    
     def __str__(self):
         s = f'[user_id: {self.user_id}, Name: {self.name}, Email: {self.email}, Borrowed Books: {self.borrowed_books}'
         return s
