@@ -72,6 +72,9 @@ class Library:
             return user
         return 'No specific user'
 
+
+    ##### Заемные операции #####
+
     def borrow_book(self, user_id, isbn):
         user = self.users.get(user_id)
         book = self.books.get(isbn)
