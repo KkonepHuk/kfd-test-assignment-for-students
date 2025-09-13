@@ -23,7 +23,9 @@ class Library:
         self.books.add(book)
     
     def remove_book(self, isbn):
-        self.books.remove(isbn)
+        if self.books.remove(isbn) == -1:
+            return False
+        return True
 
     def find_book(self, isbn):
         book = self.books.get(isbn)
@@ -89,3 +91,14 @@ class Library:
         self.borrowing_history.append(BorrowingRecord(user, book))
 
         return True
+    
+    def return_book(self, user_id, isbn):
+        user = self.users.get(user_id)
+        book = self.books.get(isbn)
+
+        if user == -1 or book == -1: #Существуют ли книга и пользователь
+            return False
+        
+        book.set_available(True)
+        user.get_borrowed_books().remove(isbn)
+        self.borrowing_history.append(BorrowingRecord(user, book))
