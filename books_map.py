@@ -35,3 +35,11 @@ class BooksMap(HashMap):
         else:
             self.table[ind] = None
         self.decr_occupation()
+    
+    #Получение книги по ее "ISBN"
+    def get(self, isbn):
+        ind = self.hash_func(isbn)
+        if self.table[ind] == None:
+            return -1
+        else:
+            return self.table[ind].find(isbn)
