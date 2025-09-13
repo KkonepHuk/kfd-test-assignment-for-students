@@ -1,4 +1,4 @@
-from user import User
+from user_module.user_types.user import User
 
 class Faculty(User):
     def __init__(self, name, user_id, email, borrowed_books = []):
