@@ -15,6 +15,40 @@ class Library:
         self.borrowing_history = []
         self.genres = set()
 
+
+    ##### Операции с Книгами #####
+
+    def add_book(self, title, author, isbn, genre):
+        book = Book(title, author, isbn, genre)
+        self.books.add(book)
+    
+    def remove_book(self, isbn):
+        self.books.remove(isbn)
+
+    def find_book(self, isbn):
+        book = self.books.get(isbn)
+        if book != -1:
+            return book
+        return 'No book'
+    
+    def search_books(self, query: str):
+        result = []
+        query = query.lower()
+
+        for sll in self.books:
+            if sll is None:
+                continue
+            node = sll.head
+            while node:
+                book = node.item
+                if (query in book.title.lower() or
+                    query in book.author.lower() or
+                    query in book.genre.lower() or
+                    query in book.isbn):
+                    result.append(book)
+                node = node.next
+        return result
+
     def borrow_book(self, user_id, isbn):
         user = self.users.get(user_id)
         book = self.books.get(isbn)
