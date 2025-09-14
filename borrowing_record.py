@@ -13,3 +13,7 @@ class BorrowingRecord:
     
     def is_overdue(self):
         return date.today() > self.borrow_date + timedelta(days=self.user.get_borrow_days())
+    
+    def __str__(self):
+        s = f'[User: {self.user}, Book: {self.book}, Borrow Date: {self.borrow_date}]'
+        return s
