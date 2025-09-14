@@ -1,8 +1,8 @@
-from library import Library
+from core.library import Library
 from handlers.book_managment import handle_book_managment
 from handlers.user_managment import handle_user_managment
 from handlers.borrowing_operations import handle_borrowing_operations
-from utils import get_input
+from core.utils import get_input
 
 def show_menu():
     print("\n=== Library Management ===\n")

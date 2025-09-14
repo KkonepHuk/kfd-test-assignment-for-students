@@ -1,5 +1,5 @@
-from library import Library
-from utils import get_input
+from core.library import Library
+from core.utils import get_input
 
 
 def show_book_managment_menu():
