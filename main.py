@@ -18,7 +18,7 @@ if __name__ == '__main__':
     is_launched = True
     while is_launched:
         show_menu()
-        choice = get_input(prompt="Enter choice: ", valid_input="0123w")
+        choice = get_input(prompt="Enter choice: ", valid_input="0123")
 
         match choice:
             case '0':
@@ -29,8 +29,3 @@ if __name__ == '__main__':
                 handle_user_managment(lib)
             case '3':
                 handle_borrowing_operations(lib)
-            case 'w':
-                print("Users")
-                lib.users.test_show()
-                print("Books")
-                lib.books.test_show()
