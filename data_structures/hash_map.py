@@ -25,12 +25,13 @@ class HashMap:
         def wrapper(self, *args):
             if self.occupancy_rate() >= 2 / 3:
                 new_size = self.size + int(self.size * 2 / 3)
-                new_library_system = HashMap(new_size)
+                new_library_system = self.__class__(new_size)
                 for sll in self.table:
                     while sll and sll.head:
                         node = sll.remove_from_start()
                         item = node.item
-                        new_library_system.add(item)
+                        key = node.key
+                        new_library_system.add(item, key)
                 self.size = new_library_system.size
                 self.table = new_library_system.table
                 self.occupancy = new_library_system.occupancy
