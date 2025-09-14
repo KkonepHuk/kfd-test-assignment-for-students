@@ -1,3 +1,6 @@
+from hashmap.singly_linked_list import SinglyLinkedList
+
+
 class HashMap:
     #Инициализирование Хэш-Таблицы с заданным размером size
     def __init__(self, size):
@@ -34,6 +37,36 @@ class HashMap:
 
             return add_func(self, *args)
         return wrapper
+    
+        #Добавление книги
+    @expansion
+    def add(self, item, key):
+        ind = self.hash_func(key)
+        if self.table[ind] == None:
+            sll = SinglyLinkedList()
+            sll.add_to_start(item, key)
+            self.table[ind] = sll
+        else:
+            self.table[ind].add_to_start(item, key)
+        self.incr_occupation()
+    
+    def remove(self, key):
+        ind = self.hash_func(key)
+        if self.table[ind] == None:
+            return -1
+        elif self.table[ind].length > 1:
+            self.table[ind].remove(key)
+        else:
+            self.table[ind] = None
+        self.decr_occupation()
+    
+        #Получение книги по ее "ISBN"
+    def get(self, key):
+        ind = self.hash_func(key)
+        if self.table[ind] == None:
+            return -1
+        else:
+            return self.table[ind].find(key)
     
     #Вывод всей Хэш-Таблицы для тестов
     def test_show(self):

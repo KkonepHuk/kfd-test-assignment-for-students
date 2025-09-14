@@ -20,7 +20,7 @@ class Library:
 
     def add_book(self, title, author, isbn, genre):
         book = Book(title, author, isbn, genre)
-        self.books.add(book)
+        self.books.add(book, isbn)
     
     def remove_book(self, isbn):
         if self.books.remove(isbn) == -1:
@@ -58,7 +58,7 @@ class Library:
             case _:
                 return -1 #Поменять на нормальный вывод
         
-        self.users.add(user)
+        self.users.add(user, user_id)
     
     def find_user(self, user_id):
         user = self.users.get(user_id)

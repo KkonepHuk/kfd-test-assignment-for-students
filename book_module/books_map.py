@@ -20,34 +20,3 @@ class BooksMap(HashMap):
         for char in isbn:
             hash_value = (hash_value * 31 + ord(char))
         return hash_value % self.size
-
-    #Добавление книги
-    @HashMap.expansion
-    def add(self, book):
-        ind = self.hash_func(book.isbn)
-        if self.table[ind] == None:
-            sll = SinglyLinkedList()
-            sll.add_to_start(book, book.isbn)
-            self.table[ind] = sll
-        else:
-            self.table[ind].add_to_start(book, book.isbn)
-        self.incr_occupation()
-    
-    #Удаление книги по ее "ISBN"
-    def remove(self, isbn):
-        ind = self.hash_func(isbn)
-        if self.table[ind] == None:
-            return -1
-        elif self.table[ind].length > 1:
-            self.table[ind].remove(isbn)
-        else:
-            self.table[ind] = None
-        self.decr_occupation()
-    
-    #Получение книги по ее "ISBN"
-    def get(self, isbn):
-        ind = self.hash_func(isbn)
-        if self.table[ind] == None:
-            return -1
-        else:
-            return self.table[ind].find(isbn)
