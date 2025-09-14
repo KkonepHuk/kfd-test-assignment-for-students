@@ -3,7 +3,7 @@ from data_structures.singly_linked_list import SinglyLinkedList
 
 
 class UsersMap(HashMap):
-    def __init__(self, size=10):
+    def __init__(self, size=1000):
         super().__init__(size)
 
     #Хэш-функция
