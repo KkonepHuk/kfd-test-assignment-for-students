@@ -110,5 +110,5 @@ class Library:
         result = []
         for record in self.borrowing_history:
             if record.is_overdue() and (not record.returned):
-                result.append(record)
+                result.append(str(record))
         return result
