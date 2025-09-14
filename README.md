@@ -6,6 +6,6 @@ Clone this repository:
    ```
 ## Run
 To start the program, run:
-    ```sh
+    ```
     python3 main.py
     ```
