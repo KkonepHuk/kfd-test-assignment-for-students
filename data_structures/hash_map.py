@@ -1,4 +1,4 @@
-from hashmap.singly_linked_list import SinglyLinkedList
+from data_structures.singly_linked_list import SinglyLinkedList
 
 
 class HashMap:
